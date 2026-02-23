@@ -1,0 +1,65 @@
+23rd Feb 2026
+=============
+
+    -> AWS - Amazon Web Services 
+
+        -> Cloud Computing 
+
+            -> Any Application has data 
+
+                -> Data is in Servers 
+
+                    -> Categorized into Web Servers (Public Data - images)
+                    and Database Servers(Private Data - Cards, Address etc)
+
+                -> Where are this servers ? 
+
+                    -> Servers are hosted in Datacenters 
+
+                -> Datacenters can be Categorized into 
+
+                    -> On Premise Datacenters (Physical)
+
+                    -> Cloud Datacenters (Virtually)
+
+        -> Datacenter
+
+            -> A data center is a building, a dedicated space within a building, 
+            or a group of buildings used to house computer systems and 
+            associated components, such as telecommunications and storage systems.
+
+            -> Managing Datacenters is Expensive & Hard To Maintain 
+
+    -> Cloud Computing
+
+        -> ‘The Cloud’ can also refer to Cloud computing is the 
+        "on-demand" availability of compute power, database storage, 
+        applications, and other IT resources through a cloud services platform 
+        (AWS/AZURE/GCP/Oracle etc) via the "internet" with "pay-as-you-go" pricing.
+
+        -> Cloud Computing is very close to Online Ride Services 
+        like ola, rapido etc 
+
+    
+    -> Cloud Offerings
+
+        -> Infrastructure As A Service - IaaS 
+
+            -> Hardware (Managed By Cloud Vendor i.e AWS)
+
+                -> Provides servers, storage, networking, and virtualization
+
+                -> You as a Customer, responsible for 
+
+                    -> Managing Operating Systems 
+
+                    -> Managing Libraries and Binaries For Your Softwares 
+
+                    -> Managing Your Softwares 
+
+
+        -> Platform As A Service - PaaS 
+        
+
+        -> Software As A Service - SaaS 
+
