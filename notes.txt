@@ -57,9 +57,106 @@
 
                     -> Managing Your Softwares 
 
+                    -> NW - Servers (VPC - EC2)
+
 
         -> Platform As A Service - PaaS 
         
 
         -> Software As A Service - SaaS 
 
+
+24th Feb 2026
+=============
+
+    -> Platform As A Service - PaaS 
+
+        -> Platform as a Service (PaaS) is a cloud computing model providing a complete, 
+        ready-to-use platform—infrastructure, middleware, and development tools—for developing, 
+        running, and managing applications over the internet. 
+        
+        -> It allows developers to focus on coding and deployment while 
+        providers handle servers, storage, networking, and OS updates.
+
+        -> Database as a platform (RDS)
+
+    
+    -> Software As A Service - SaaS 
+
+        -> Software as a Service (SaaS) is a cloud-based model where providers 
+        deliver applications over the internet on a subscription basis, 
+        managing all infrastructure, security, and updates. 
+        
+        -> Users access software via web browsers, eliminating the need for 
+        local installation and maintenance. 
+        
+        -> Examples include Office 365, Salesforce, Google Workspace, and Slack.
+
+
+        -> https://study.com/cimages/multimages/16/500px-cloud_computing_layers.svg.png
+
+        -> https://d2.naver.com/content/images/2015/06/helloworld-1092-9.png
+
+
+        -> Company 1 - IaaS (Web Servers)
+
+        -> Company 2 - IaaS (Web Servers) + PaaS (Database Server)
+
+        -> Company 3 - IaaS (Web Servers) + PaaS (Database Server) + SaaS (Email Software)
+
+
+    -> Traditional Approach (Setting Up Application Infrastructure On Physical Datacenter)
+
+        -> Flipkart Ecommerce Application 
+
+            -> Servers 
+                +
+            -> Storage 
+                +
+            -> Databases                ======>  Application
+                +
+            -> Networking
+                +
+            -> Security 
+                + 
+            -> etc 
+
+
+    -> New Approach (Setting Up Application Infrastructure On Cloud Datacenter)
+
+        -> Flipkart Ecommerce Application
+
+            -> Servers          - AWS EC2 
+                +                   +
+            -> Storage          - AWS S3 
+                +                   +
+            -> Databases        - AWS RDS   ======>  Application
+                +                   +
+            -> Networking       - AWS VPC 
+                +                   +
+            -> Security         - AWS IAM 
+                +                   + 
+            -> etc              - etc 
+
+    
+    -> Application should have following characteristics (Four Pillars Of Cloud)
+
+        -> Highly Available 
+
+            -> High availability in AWS ensures that applications are 
+            continuously accessible and operational
+
+        -> Fault Tolerant 
+
+            -> Fault tolerance in AWS refers to the ability of a system to 
+            continue operating without interruption in the face of hardware failures
+
+        -> Scalable  
+
+            -> Scalability in AWS refers to the ability of a system to handle 
+            increasing workloads and accommodate growing demands. 
+
+        -> Secured 
+
+            -> Security in AWS refers to the measures taken to protect cloud resources, 
+            data, and applications from unauthorized access.
