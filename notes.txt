@@ -160,3 +160,65 @@
 
             -> Security in AWS refers to the measures taken to protect cloud resources, 
             data, and applications from unauthorized access.
+
+
+25th Feb 2026
+=============
+
+    -> Infrastructure As A Service - IaaS 
+
+        -> AWS Global Infrastructure 
+
+            ->  Amazon Cloud Computing resources (servers, storage, databases etc) 
+            are available across the world. 
+
+            -> In simple terms if we see this https://aws.amazon.com/about-aws/global-infrastructure/ 
+            with above map we can say Amazon Datacenters are available in different parts of the world 
+
+        -> In terms of AWS, infrastructure is made up of 
+
+            -> Regions 
+
+            -> Availability Zones
+        
+                -> https://www.researchgate.net/profile/Ivan_Beres/publication/360541079/figure/fig1/AS:1154856056291328@1652350548135/AWS-Regions-and-Availability-Zones-Scott-nd.ppm
+
+            -> Edge Locations
+
+        -> Regions
+
+            -> Regions are designed to service AWS customers (or your users) 
+            that are located closest to a region.
+
+            -> Availability of Services are different for different AWS Regions.
+
+            -> Price varies from region to region
+
+        -> Availability zone (AZ)
+
+            -> Availability zone is where the actual data centers are located
+
+                -> https://www.researchgate.net/profile/Ivan_Beres/publication/360541079/figure/fig1/AS:1154856056291328@1652350548135/AWS-Regions-and-Availability-Zones-Scott-nd.ppm
+
+            -> Within a Region, there can be multiple Availability zones
+
+            -> Each AZ has independent Power Supply, Networking, Cooling System, Physical Security.
+
+
+        -> Edge locations
+
+            -> An AWS Edge Location is a data center in the AWS global network used by services 
+            like CloudFront, Global Accelerator, and Lambda@Edge to "store cached content" 
+            (images, videos) and process requests closer to end-users, 
+            drastically reducing latency by serving data from the nearest point of presence(pop) 
+            rather than a distant main AWS Region. 
+            They act as caching warehouses, improving performance for websites.
+
+            -> A Content Delivery Network (CDN) is a geographically distributed group of servers 
+            that caches content (images, video, HTML, JS) closer to end-users, 
+            significantly improving website speed, reducing latency, lowering bandwidth costs
+
+            -> https://www.belugacdn.com/images/how-content-delivery-networks-work.png
+
+
+
