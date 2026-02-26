@@ -221,4 +221,115 @@
             -> https://www.belugacdn.com/images/how-content-delivery-networks-work.png
 
 
+26th Feb 2026
+=============
 
+    -> Virtual Private Cloud - VPC 
+
+        -> A Virtual Private Cloud is a secure, isolated private cloud hosted 
+        within a public cloud. 
+
+            -> https://images.netcomlearning.com/cms/images/virtual-private-cloud.jpg
+
+        -> VPC customers can run code, store data, host websites & applications in isolated mode
+
+            -> https://tudip.com/wp-content/uploads/2019/09/Virtual-Private-Cloud-Unify-2015.png
+
+        -> NOTE: Having VPC is similar to having your own data center inside AWS. 
+
+        -> VPC is a service that lets customers(IBM) provision a logically isolated 
+        section of the AWS Cloud where you can launch AWS resources(Servers) 
+        in a VIRTUAL NETWORK that you define.
+
+        -> VPC Architecture Reference 
+
+            -> https://media.licdn.com/dms/image/v2/D4D12AQFI8sqvP4xFFQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1700537758681?e=2147483647&v=beta&t=zE97TFGw5FQJEjUksqx7SohNsqqV57-IYQ_pj7K2M2U
+
+    -> VPC Components 
+
+        -> Internet Gateway 
+
+        -> Subnets 
+
+            -> Public Subnets 
+
+            -> Private Subnets
+
+        -> Route Tables 
+
+            -> Public Route Tables
+
+            -> Private Route Tables
+
+        -> Network Access Control List - NACL (Firewall - 1)
+
+        -> Security Groups (Firewall - 2)
+
+
+    -> VPC Components Scenario From Real World Application
+
+        -> VPC (Virtual Private Cloud)
+
+            -> A VPC is the private network where the entire Myntra application infrastructure 
+            (web servers, app servers, databases) is hosted securely in the cloud.
+            It provides isolation and control over IP ranges, 
+            routing, and security for the application environment.
+
+        -> Internet Gateway (IGW)
+
+            -> An Internet Gateway allows public users (customers browsing myntra.com) 
+            to access the application servers hosted inside the VPC.
+            It acts as the entry and exit point between the internet and the cloud network.
+
+        -> Subnets
+
+            -> Subnets divide the VPC into smaller networks to separate application layers like 
+            web, application, and database tiers.
+            This improves security and organization by controlling which resources can 
+            communicate with each other.
+        
+        -> Public Subnets
+
+            -> Public subnets host components that must be accessible from the internet, 
+            such as load balancers or web servers serving Myntra’s website.
+            They are connected to the Internet Gateway through route tables 
+            to allow incoming user traffic.
+
+        -> Private Subnets
+
+            -> Private subnets host sensitive components like application servers and databases 
+            that should not be directly exposed to the internet.
+            They can communicate internally within the VPC while remaining protected 
+            from external access.
+
+        -> Route Tables
+
+            -> Route tables define how traffic flows between different parts of the 
+            Myntra infrastructure and the internet.
+            They determine whether traffic goes to internal services, other subnets, 
+            or outside via the Internet Gateway.
+
+        -> Public Route Tables
+
+            -> Public route tables contain routes that send traffic to the Internet Gateway, 
+            enabling internet access for public-facing components.
+            They ensure users can reach the Myntra website hosted in public subnets.
+
+        -> Private Route Tables
+
+            -> Private route tables restrict direct internet access and route traffic 
+            only within the internal network or through NAT services if needed.
+            They protect backend systems like databases from external exposure.
+
+        -> Network Access Control List (NACL) — Firewall Level 1
+
+            -> NACL acts as a subnet-level firewall controlling which traffic is allowed or denied 
+            into subnet layers of the Myntra infrastructure.
+            It provides an additional security boundary before traffic reaches individual servers.
+
+        -> Security Groups — Firewall Level 2
+
+            -> Security Groups act as instance-level firewalls that control which users or services 
+            can access specific servers (like web or database servers).
+            They ensure only required ports (like HTTPS 443) are open for Myntra’s application components.
+        
