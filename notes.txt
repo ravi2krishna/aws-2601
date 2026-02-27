@@ -333,3 +333,17 @@
             can access specific servers (like web or database servers).
             They ensure only required ports (like HTTPS 443) are open for Myntra’s application components.
         
+
+27th Feb 2026
+=============
+
+    -> VPC Components Functioning 
+
+        -> NOTE: By default in every region we have a VPC already Setup
+        we call these VPC's as Default VPC 
+
+        -> Default VPC's will not fit every customer requirement, 
+        so you can create our own VPC's  
+
+
+
