@@ -346,4 +346,59 @@
         so you can create our own VPC's  
 
 
+2nd Mar 2026
+=============
+
+    -> Subnet Reserved IP's 
+
+    -> Web Subnet 10.0.0.0 - 10.0.15.255
+        10.0.0.0: Network address.
+        10.0.0.1: Reserved by AWS for the VPC router.
+        10.0.0.2: Reserved by AWS for Amazon DNS server.
+        10.0.0.3: Reserved by AWS for future use.
+        10.0.15.255: Network broadcast address.
+
+        -> Useable Range : 10.0.0.4 - 10.0.15.254v
+
+    -> Most Popular Applications
+        
+        https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites
+        
+
+    -> Requirement Given By Edify 
+    
+        -> Edify is going to setup the LMS App environment i.e servers on AWS, 
+        their clients are from XYZ (REGION) Location 
+
+        -> They are gonna host Servers as part of LMS App Infrastructure
+
+        -> These servers are grouped into three subnets each with 4k servers
+
+        -> First Subnet is for web servers, around 4k
+
+        -> Second Subnet is for backend servers, around 4k
+
+        -> Third Subnet is for database servers, around 4k
+
+        -> In the future, they might add more number of subnets i.e 
+        cache subnets, load balancer subnet etc
+
+        -> The web servers and app servers needs to be communicated from internet
+
+        -> The database servers needs to be communicated only from App Servers, 
+        but not from internet
+
+        -> Coming to security of Web Servers, they should have only 
+            -> SSH traffic enabled for administration from internet
+            -> HTTP traffic for clients from internet
+
+	    -> Coming to security of App Servers, they should have only 
+            -> SSH traffic enabled for administration from internet
+            -> HTTP traffic port 8080 for clients from internet
+
+	    -> Coming to security of Database Servers, 
+        they should have only SSH access from app servers
+            -> SSH traffic enabled from web servers only
+            -> Postgres Database Traffic Allowed from App Servers
+
 
