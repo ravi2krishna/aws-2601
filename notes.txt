@@ -406,3 +406,41 @@
 =============
 
     -> Custom VPC Setup 
+
+
+16th Mar 2026
+=============
+
+    -> Earlier we had our infrastructure setup using Graphical User Interface (GUI) (Beginner) 
+
+        -> Created Edify VPC (Web, Backend, Database) Using GUI Took 45 mins 
+        -> New Requirement: TCS VPC (Web, Backend, Database) Using GUI Took 45 mins 
+        -> New Requirement: ACC VPC (Web, Backend, Database) Using GUI Took 45 mins 
+
+    -> We Can also Setup Infrastructure Using Command Line Interface (CLI) (Intermediate)
+
+        -> Created Edify VPC (Web, Backend, Database) Using CLI Took 45 mins 
+        -> New Requirement: TCS VPC (Web, Backend, Database) Using CLI Took 15 mins 
+        -> New Requirement: ACC VPC (Web, Backend, Database) Using CLI Took 15 mins
+
+    -> We Can also Setup Infrastructure Using Code (SCRIPTS) (Pro)
+
+        -> Created Edify VPC (Web, Backend, Database) Using CODE Took 45 mins 
+        -> New Requirement: TCS VPC (Web, Backend, Database) Using CODE Took 2 mins 
+        -> New Requirement: ACC VPC (Web, Backend, Database) Using CODE Took 2 mins
+
+
+    -> The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. 
+    
+        -> Refer https://aws.amazon.com/cli/
+
+        -> https://docs.aws.amazon.com/cli/latest/
+
+    
+    -> Commands To Work With VPC
+
+        -> aws 
+        -> aws ec2 help 
+        -> aws aws ec2 create-vpc 
+        -> aws aws ec2 create-vpc --cidr-block 192.168.0.0/16
+        
