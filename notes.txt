@@ -436,11 +436,38 @@
 
         -> https://docs.aws.amazon.com/cli/latest/
 
+17th Mar 2026
+=============
     
     -> Commands To Work With VPC
 
         -> aws 
         -> aws ec2 help 
         -> aws aws ec2 create-vpc 
-        -> aws aws ec2 create-vpc --cidr-block 192.168.0.0/16
         
+        -> aws ec2 create-vpc --cidr-block 10.0.0.0/16
+        -> aws ec2 create-tags --resources vpc-0fd647a81acf92ad2 --tags Key=Name,Value=tcs
+        -> aws ec2 create-subnet --vpc-id vpc-0fd647a81acf92ad2 --cidr-block 10.0.0.0/24 
+        -> aws ec2 create-tags --resources subnet-0282d5d04ab346ac2 --tags Key=Name,Value=tcs-web-subnet 
+        -> aws ec2 create-subnet --vpc-id vpc-0fd647a81acf92ad2 --cidr-block 10.0.1.0/24
+        -> aws ec2 create-tags --resources subnet-040bc86b094952e05 --tags Key=Name,Value=tcs-app-subnet  
+        -> aws ec2 create-subnet --vpc-id vpc-0fd647a81acf92ad2 --cidr-block 10.0.2.0/24
+        -> aws ec2 create-tags --resources subnet-0f95d287df2ed09b2 --tags Key=Name,Value=tcs-db-subnet  
+        -> aws ec2 modify-subnet-attribute --subnet-id subnet-0282d5d04ab346ac2 --map-public-ip-on-launch
+        -> aws ec2 modify-subnet-attribute --subnet-id subnet-040bc86b094952e05 --map-public-ip-on-launch
+        -> aws ec2 create-route-table --vpc-id vpc-0fd647a81acf92ad2
+        -> aws ec2 create-tags --resources rtb-0a5488a2a79c7bca4 --tags Key=Name,Value=tcs-public-route-table
+        -> aws ec2 create-route-table --vpc-id vpc-0fd647a81acf92ad2
+        -> aws ec2 create-tags --resources rtb-04902193b0e46ef80 --tags Key=Name,Value=tcs-private-route-table
+        -> aws ec2 create-internet-gateway 
+        -> aws ec2 create-tags --resources igw-06a0948e5f13056de --tags Key=Name,Value=tcs-internet-gateway
+        -> aws ec2 attach-internet-gateway --internet-gateway-id igw-06a0948e5f13056de --vpc-id vpc-0fd647a81acf92ad2
+        -> aws ec2 create-route --route-table-id rtb-0a5488a2a79c7bca4 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-06a0948e5f13056de
+        -> aws ec2 associate-route-table --route-table-id rtb-0a5488a2a79c7bca4 --subnet-id subnet-0282d5d04ab346ac2
+        -> aws ec2 associate-route-table --route-table-id rtb-0a5488a2a79c7bca4 --subnet-id subnet-040bc86b094952e05
+        -> aws ec2 associate-route-table --route-table-id rtb-04902193b0e46ef80 --subnet-id subnet-0f95d287df2ed09b2
+        -> https://docs.aws.amazon.com/cli/latest/reference/ec2/create-network-acl.html
+        -> https://docs.aws.amazon.com/cli/latest/reference/ec2/create-network-acl-entry.html
+        -> https://docs.aws.amazon.com/cli/latest/reference/ec2/create-security-group.html
+        -> https://docs.aws.amazon.com/cli/latest/reference/ec2/authorize-security-group-ingress.html
+
