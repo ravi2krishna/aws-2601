@@ -471,3 +471,29 @@
         -> https://docs.aws.amazon.com/cli/latest/reference/ec2/create-security-group.html
         -> https://docs.aws.amazon.com/cli/latest/reference/ec2/authorize-security-group-ingress.html
 
+
+18th Mar 2026
+=============
+
+    -> Infrastructure As Code (IaC)
+
+        -> Infrastructure as code is the process of managing and provisioning computer "data centers" 
+        through machine-readable definition files [CODE].
+
+        -> Cloud Formation Template 
+
+            -> https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html 
+
+        -> Remaining Resources 
+
+            -> https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-networkaclentry.html
+
+            -> https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-subnetnetworkaclassociation.html
+
+            -> https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-securitygroup.html
+
+    
+    -> Deploy CloudFormation Template Using CLI 
+
+        -> aws cloudformation create-stack --stack-name tcs --template-body file://tcs.yaml
+

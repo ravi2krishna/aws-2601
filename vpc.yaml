@@ -1,0 +1,112 @@
+AWSTemplateFormatVersion: 2010-09-09 
+Description: Cloud Formation Template For Edify VPC
+Resources:
+  edifyvpc: 
+    Type: AWS::EC2::VPC
+    Properties: 
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      Tags:
+       - Key: Name
+         Value: edify
+
+  edifywebSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref edifyvpc
+      CidrBlock: 10.0.0.0/24
+      AvailabilityZone: "us-east-2a"
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+      - Key: Name
+        Value: edify-web-subnet
+
+  edifyappSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref edifyvpc
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: "us-east-2a"
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+      - Key: Name
+        Value: edify-app-subnet
+
+  edifydbSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref edifyvpc
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: "us-east-2a"
+      MapPublicIpOnLaunch: 'false'
+      Tags:
+      - Key: Name
+        Value: edify-db-subnet
+
+  edifyInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: Name
+        Value: edify-InternetGateway
+
+  edifyAttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: edifyvpc
+      InternetGatewayId:
+        Ref: edifyInternetGateway
+
+  edifypublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:  
+        Ref: edifyvpc
+      Tags:
+      - Key: Name
+        Value: edify-public-rt
+
+  edifywwwRoute:
+    Type: AWS::EC2::Route
+    DependsOn: edifyAttachGateway
+    Properties:
+       RouteTableId:
+         Ref: edifypublicRouteTable
+       DestinationCidrBlock: 0.0.0.0/0
+       GatewayId:
+         Ref: edifyInternetGateway
+
+  edifywebSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: edifywebSubnet
+      RouteTableId:
+        Ref: edifypublicRouteTable
+
+  edifyappSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: edifyappSubnet
+      RouteTableId:
+        Ref: edifypublicRouteTable
+
+  edifyprivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:  
+        Ref: edifyvpc
+      Tags:
+      - Key: Name
+        Value: edify-private-rt
+
+  edifydbSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: edifydbSubnet
+      RouteTableId:
+        Ref: edifyprivateRouteTable
