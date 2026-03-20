@@ -497,3 +497,68 @@
 
         -> aws cloudformation create-stack --stack-name tcs --template-body file://tcs.yaml
 
+
+19th Mar 2026
+=============
+
+    -> Server Management is done using service called EC2 
+
+    -> EC2 - Elastic Compute Cloud
+
+        -> EC2 allows users to rent virtual computers (Servers/Machines) on which 
+            you can run your own computer applications.
+
+    -> Server is a machine (computer)
+
+    -> NOTE: Server in aws is referred as EC2 Instance / Instance
+
+    -> Computer has hardware                        -> Server has Instance Type [cpu + ram]
+        i3 / i5 / 4 GB RAM etc                          t2.micro, t2.medium, t2.large etc 
+
+    -> Computer has hard disk                       -> Instance has EBS (Elastic Block) Storage
+        250 GB / 500 GB / 1 TB                          250 GB / 500 GB / 1 TB                      
+    
+    -> Computer has network                         -> Instance has VPC 
+
+    -> Compute has operating system                 -> Instance has AMI - Amazon Machine Image 
+
+    -> Computer has Authentication                  -> Instance has Authentication
+        username & password                             key pairs (public & private key)
+
+    -> Computer has applications                    -> Instance has applications
+        chrome / notepad etc                            myntra / flipkart / netflix etc 
+
+
+    -> Web Server 
+
+        -> A web server is computer software that accepts requests via HTTP 
+            to distribute web content.
+        
+        -> NGINX Web Server is popular for hosting Web Sites & Web Applications 
+
+        -> Login To Server With Key
+
+            -> ssh -i aws.pem ubuntu@3.138.172.167
+
+            -> chmod 400 aws.pem
+
+            -> ssh -i aws.pem ubuntu@3.138.172.167
+
+        -> Setup Web Server 
+
+            -> sudo apt update -y 
+            -> sudo apt install nginx -y 
+
+        -> Deploy Application 
+
+            -> Application Code - https://github.com/ravi2krishna/ecomm.git 
+
+            -> Document Root: Location where website code is hosted /var/www/html 
+
+                -> ls /var/www/html 
+                -> sudo rm -r /var/www/html/* 
+                -> ls /var/www/html 
+                -> sudo git clone https://github.com/ravi2krishna/ecomm.git /var/www/html 
+                -> ls /var/www/html 
+
+
