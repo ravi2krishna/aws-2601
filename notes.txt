@@ -562,3 +562,15 @@
                 -> ls /var/www/html 
 
 
+20th Mar 2026
+=============
+
+    -> AWS SNS - Simple Notification Service 
+
+    -> AWS Cloud Watch - Monitoring Service 
+
+    -> AWS SAAS Based Approach 
+
+    
+
+
